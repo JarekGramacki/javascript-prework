@@ -1,7 +1,22 @@
+function getMoveName(randomNumber){
+  if(randomNumber == 1){
+    return 'kamień';
+  }else if(randomNumber == 2){
+    return 'papier';
+  }else if(randomNumber == 3){
+    return 'nożyce';
+  }
+
+  printMessage('Nie znam ruchu o id ' + randomNumber + '.');
+  return 'nieznany ruch';
+}
+
+
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('Wylosowana liczba to: ' + randomNumber);
-let computerMove = 'nieznany ruch';
+let computerMove = getMoveName(randomNumber);
 
+/*
 if(randomNumber == 1){
     computerMove = 'kamień';
 }
@@ -12,21 +27,38 @@ if(randomNumber == 2){
 
 if(randomNumber == 3){
     computerMove = 'nożyce';
-}
+}*/
 
 printMessage('Ruch komputera: ' + computerMove);
 
 
+
+
+function getMoveName(playerInput){
+  if(playerInput == 2){
+    return 'papier';
+  }else if(playerInput == 1){
+    return 'kamień';
+  }else if(playerInput == 3){
+    return 'nożyce';
+  }
+
+  printMessage('Nie znam ruchu o id ' + playerInput + '.');
+  return 'nieznany ruch';
+}
+
+
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 console.log('Gracz wpisał: ' + playerInput);
-let playerMove = 'nieznany ruch';
+let playerMove = getMoveName(playerInput);
 
+/*
 if (playerInput == null){
     playerMove = 'gracz stchórzył - punkt dla komputera';
 }
 
 if (playerInput > 3){
-    playerMove = 'zły ruch - punkt dla komputera'
+    playerMove = 'zły ruch - punkt dla komputera';
 }
 
 if (playerInput <= 0){
@@ -44,8 +76,9 @@ if (playerInput == '2'){
 if (playerInput == '3'){
     playerMove = 'nożyce';
 }
-
+*/
 printMessage('Mój ruch: ' + playerMove);
+
 
 if( computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
