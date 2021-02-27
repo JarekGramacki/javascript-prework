@@ -41,8 +41,14 @@ function getMoveName(playerInput){
     return 'kamień';
   }else if(playerInput == 3){
     return 'nożyce';
+  }else if(playerInput == null){
+    return 'gracz stchórzył-punkt dla komputera';
+  }else if(playerInput > 3){
+    return 'zły ruch-punkt dla komputera';
+  }else if(playerInput <=0){
+    return 'zły ruch-punkt dla komputera';
   }
-
+    
   printMessage('Nie znam ruchu o id ' + playerInput + '.');
   return 'nieznany ruch';
 }
