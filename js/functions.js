@@ -5,7 +5,11 @@ function printMessage(msg){
 	divMsg.appendChild(div);
 }
 
+function updateResult(p, c){
+	let divResult = document.getElementById('result');
+	divResult.innerHTML = 'Player: ' + p + ' - Computer: ' + c;
+}
+
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
-

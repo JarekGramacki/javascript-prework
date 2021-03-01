@@ -14,8 +14,7 @@ function playGame(playerInput) {
 
   printMessage("Ruch komputera: " + argComputerMove);
 
-  displayResult(argComputerMove, argPlayerMove);
- 
+  displayResult(argComputerMove, argPlayerMove);  
 
   function getMoveName(playerInput) {
     if (playerInput == 2) {
@@ -34,19 +33,28 @@ function playGame(playerInput) {
   function displayResult(argComputerMove, argPlayerMove) {
     if (argComputerMove == "kamień" && argPlayerMove == "papier") {
       printMessage("Ty wygrywasz!");
+      playerWins++;
     } else if (argComputerMove == "papier" && argPlayerMove == "nożyce") {
       printMessage("Ty wygrywasz!");
+      playerWins++;
     } else if (argComputerMove == "nożyce" && argPlayerMove == "kamień") {
       printMessage("Ty wygrywasz!");
+      playerWins++;
     } else if (argComputerMove == argPlayerMove) {
       printMessage("Mamy Remis!");
     } else {
       printMessage("Przegrywasz :(");
+      computerWins++;
     }
 
     printMessage("Zagrałem " + argPlayerMove + ", a Ty " + argComputerMove);
+
+    updateResult(playerWins, computerWins);
   }  
 }
+
+let playerWins = 0, computerWins = 0;
+updateResult(playerWins, computerWins);
 
 document.getElementById('play-rock').addEventListener('click', function(){
   playGame(1);
