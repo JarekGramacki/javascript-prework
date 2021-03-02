@@ -15,7 +15,7 @@
 
     printMessage("Ruch komputera: " + argComputerMove);
 
-    displayResult(argComputerMove, argPlayerMove);  
+      
 
     function getMoveName(playerInput) {
       if (playerInput == 2) {
@@ -47,11 +47,11 @@
         printMessage("Przegrywasz :(");
         computerWins++;
       }
-
       printMessage("Zagrałem " + argPlayerMove + ", a Ty " + argComputerMove);
 
       updateResult(playerWins, computerWins);
     }  
+    displayResult(argComputerMove, argPlayerMove);
   }
 
   let playerWins = 0, computerWins = 0;
