@@ -5,14 +5,7 @@
 
     const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log("Wylosowana liczba to: " + randomNumber);
-    const argComputerMove = getMoveName(randomNumber);
-
-    printMessage("Ruch komputera: " + argComputerMove);
     
-
-    console.log("Gracz wpisał: " + playerInput);
-    
-
     function getMoveName(playerInput) {
       if (playerInput == 2) {
         return "papier";
@@ -20,12 +13,14 @@
         return "kamień";
       } else if (playerInput == 3) {
         return "nożyce"; 
-      } else {
-        return "Nie znam ruchu o id " + playerInput + ".";
-      }
+      } 
     }
+
     const argPlayerMove = getMoveName(playerInput);  
     printMessage("Mój ruch: " + argPlayerMove);
+
+    const argComputerMove = getMoveName(randomNumber);
+    printMessage("Ruch komputera: " + argComputerMove);
 
     function displayResult(argComputerMove, argPlayerMove) {
       if (argComputerMove == "kamień" && argPlayerMove == "papier") {
